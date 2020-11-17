@@ -10,3 +10,8 @@ ports:
 tasks:
   - init: echo 'init script' # runs during prebuild
     command: echo 'start script'
+
+vscode:
+  extensions:
+    - Pivotal.vscode-spring-boot@1.23.0:1iLvjTfznJrV611qRUeOHg==
+    - vscjava.vscode-spring-initializr@0.5.0:ew8OO+0K7TGuB+rb9kzMvg==
