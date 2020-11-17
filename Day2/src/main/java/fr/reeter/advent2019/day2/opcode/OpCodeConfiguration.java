@@ -15,8 +15,8 @@ import java.io.InputStreamReader;
  *
  */
 @Service
-public class OpCodeRunner {
-    private static final Logger LOGGER = LoggerFactory.getLogger(OpCodeRunner.class);
+public class OpCodeConfiguration {
+    private static final Logger LOGGER = LoggerFactory.getLogger(OpCodeConfiguration.class);
 
     // OpCodes list to process
     private int[] opCodes;
@@ -35,19 +35,16 @@ public class OpCodeRunner {
                     LOGGER.info("Code: " + codes[i]);
                     opCodes[i] = Integer.parseInt(codes[i]);
                 }
-
-
-                // Fix gravity
-                opCodes[1] = 12;
-                opCodes[2] = 2;
             }
-
-
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public int[] getOpCodes() {
+        return opCodes;
     }
 }

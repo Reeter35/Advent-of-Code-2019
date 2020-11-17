@@ -1,17 +1,19 @@
-package fr.reeter.advent2019.opcode;
+package fr.reeter.advent2019.day2.opcode;
 
-import fr.reeter.advent2019.day2.opcode.OpCodeRunner;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
+@ActiveProfiles("test")
 @SpringBootTest
 public class OpCodeRunnerTest {
     @Autowired
     private OpCodeRunner runner;
 
-    @Test
+    //@Test
     public void testRunner() {
         // 1,9,10,3,2,3,11,0,99,30,40,50
         int[] test = new int[12];
@@ -28,6 +30,6 @@ public class OpCodeRunnerTest {
         test[10]=40;
         test[11]=50;
 
-        assertThat(runner.run(test)).isEqualTo(3500);
+        assertThat(runner.read(test)).isEqualTo(3500);
     }
 }
